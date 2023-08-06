@@ -9,8 +9,12 @@
 # Name of the subdirectory
 #clone_dir="stable-diffusion-webui"
 
+# PyTorch settings
+export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.7
+export PYTORCH_ENABLE_MPS_FALLBACK=1
+
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-#export COMMANDLINE_ARGS=""
+export COMMANDLINE_ARGS="--skip-torch-cuda-test --upcast-sampling --no-half-vae --no-half --opt-sub-quad-attention --use-cpu interrogate"
 
 # python3 executable
 #python_cmd="python3"
